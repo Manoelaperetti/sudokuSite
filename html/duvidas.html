@@ -6,49 +6,143 @@
     <title>Dúvidas</title>
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <nav class="navbar lg:navbar-expand bg-1 fg-2">
-        <div class="container-fluid">
-          <button class="btn-icon navbar-toggler" type="button" data-bs-toggle="drawer" data-bs-target="#navbarNavMenu" aria-controls="navbarNavMenu" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon" aria-hidden="true"></span>
-          </button>
-          <dialog class="drawer drawer-end" tabindex="-1" id="navbarNavMenu" aria-labelledby="navbarNavMenuLabel">
-            <div class="drawer-header">
-              <h5 class="drawer-title" id="navbarNavMenuLabel">Menu</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="drawer" aria-label="Close"></button>
+<body class="bg-light d-flex flex-column min-vh-100">
+
+    <!-- Navbar Oficial Bootstrap 5.3 -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom shadow-sm" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="paginaInicial.html">SUDOKU</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Alternar navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="paginaInicial.html">Página Inicial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="oquee.html">O que é?</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Explorar
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="tipos.html">Tipos</a></li>
+                            <li><a class="dropdown-item" href="curiosidades.html">Curiosidades</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item active" aria-current="page" href="duvidas.html">Dúvidas</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
-            <div class="drawer-body">
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="paginaInicial.html">Página Inicial</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="oquee.html">O que é?</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="tipos.html">Tipos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="curiosidades.html">Curiosidades</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="duvidas.html">Dúvidas</a>
-                  </li>
-                  <button class="nav-link" type="button" data-bs-toggle="menu" aria-expanded="false">
-                    Menu link
-                  </button>
-                <li class="nav-item">
-                  <div class="menu">
-                    <a class="menu-item" href="#">Action</a>
-                    <a class="menu-item" href="#">Another action</a>
-                    <a class="menu-item" href="#">Something else here</a>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </dialog>
         </div>
-      </nav>
-    <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
+    </nav>
+
+    <!-- Conteúdo -->
+    <main class="container my-5 flex-grow-1">
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <div class="text-center mb-4">
+                    <h1 class="fw-bold">Dúvidas Frequentes</h1>
+                    <p class="lead text-muted">Clique nas perguntas abaixo para ver as respostas.</p>
+                </div>
+
+                <!-- Accordion de Perguntas -->
+                <div class="accordion shadow-sm" id="faqSudoku">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#pergunta1" aria-expanded="true" aria-controls="pergunta1">
+                                Preciso ser bom em matemática para jogar Sudoku?
+                            </button>
+                        </h2>
+                        <div id="pergunta1" class="accordion-collapse collapse show" data-bs-parent="#faqSudoku">
+                            <div class="accordion-body">
+                                <strong>Não!</strong> Você não precisa fazer nenhuma conta de adição, subtração ou multiplicação no Sudoku clássico. Os números funcionam apenas como símbolos distintos que precisam ser organizados por eliminação e lógica.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#pergunta2" aria-expanded="false" aria-controls="pergunta2">
+                                Devo chutar um número quando ficar travado?
+                            </button>
+                        </h2>
+                        <div id="pergunta2" class="accordion-collapse collapse" data-bs-parent="#faqSudoku">
+                            <div class="accordion-body">
+                                <strong>Evite chutar.</strong> Todo Sudoku bem formulado possui uma única solução que pode ser alcançada 100% por dedução lógica. Se você chutar e errar, comprometerá o restante do tabuleiro. Em vez disso, faça pequenas anotações a lápis (candidatos) nos cantos das casas vazias.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#pergunta3" aria-expanded="false" aria-controls="pergunta3">
+                                Todo tabuleiro de Sudoku tem apenas uma solução?
+                            </button>
+                        </h2>
+                        <div id="pergunta3" class="accordion-collapse collapse" data-bs-parent="#faqSudoku">
+                            <div class="accordion-body">
+                                <strong>Sim, nos jogos oficiais.</strong> Uma regra fundamental na criação de um bom quebra-cabeça de Sudoku é que exista somente uma combinação final válida. Se houver duas ou mais soluções possíveis, o tabuleiro é considerado mal projetado.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#pergunta4" aria-expanded="false" aria-controls="pergunta4">
+                                O que define a dificuldade de um Sudoku?
+                            </button>
+                        </h2>
+                        <div id="pergunta4" class="accordion-collapse collapse" data-bs-parent="#faqSudoku">
+                            <div class="accordion-body">
+                                A dificuldade depende tanto da quantidade de números iniciais quanto das <strong>técnicas lógicas necessárias</strong> para avançar. Jogos fáceis podem ser resolvidos apenas observando linhas e blocos simples; níveis difíceis exigem padrões mais avançados como <em>Naked Pairs</em> (pares ocultos), <em>Pointing Pairs</em> e <em>X-Wing</em>.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#pergunta5" aria-expanded="false" aria-controls="pergunta5">
+                                Jogar Sudoku realmente traz benefícios para o cérebro?
+                            </button>
+                        </h2>
+                        <div id="pergunta5" class="accordion-collapse collapse" data-bs-parent="#faqSudoku">
+                            <div class="accordion-body">
+                                <strong>Sim.</strong> A prática regular estimula a memória de trabalho, melhora a capacidade de concentração, treina o reconhecimento de padrões e ajuda a manter a mente ativa.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulário para enviar nova dúvida -->
+                <div class="card border-0 shadow-sm mt-5">
+                    <div class="card-body p-4">
+                        <h4 class="fw-bold mb-3">Ainda tem alguma dúvida?</h4>
+                        <form>
+                            <div class="mb-3">
+                                <label for="nomeUsuario" class="form-label">Seu nome</label>
+                                <input type="text" class="form-control" id="nomeUsuario" placeholder="Digite seu nome">
+                            </div>
+                            <div class="mb-3">
+                                <label for="textoDuvida" class="form-label">Sua pergunta sobre Sudoku</label>
+                                <textarea class="form-control" id="textoDuvida" rows="3" placeholder="Escreva sua dúvida aqui..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enviar Dúvida</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-dark text-white text-center py-3 mt-auto">
+        <div class="container">
+            <small>Portal Sudoku &copy; 2026 — Desenvolvido com Bootstrap 5.3</small>
+        </div>
+    </footer>
 </body>
+ <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
 </html>

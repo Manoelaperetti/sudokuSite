@@ -5,50 +5,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curiosidades</title>
     <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!-- Alternativa via CDN:
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    -->
 </head>
-<body>
-    <nav class="navbar lg:navbar-expand bg-1 fg-2">
-        <div class="container-fluid">
-          <button class="btn-icon navbar-toggler" type="button" data-bs-toggle="drawer" data-bs-target="#navbarNavMenu" aria-controls="navbarNavMenu" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon" aria-hidden="true"></span>
-          </button>
-          <dialog class="drawer drawer-end" tabindex="-1" id="navbarNavMenu" aria-labelledby="navbarNavMenuLabel">
-            <div class="drawer-header">
-              <h5 class="drawer-title" id="navbarNavMenuLabel">Menu</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="drawer" aria-label="Close"></button>
+<body class="bg-light d-flex flex-column min-vh-100">
+
+    <!-- Navbar Oficial Bootstrap 5.3 -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom shadow-sm" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="paginaInicial.html">SUDOKU</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Alternar navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="paginaInicial.html">Página Inicial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="oquee.html">O que é?</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Explorar
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="tipos.html">Tipos</a></li>
+                            <li><a class="dropdown-item active" aria-current="page" href="curiosidades.html">Curiosidades</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="duvidas.html">Dúvidas</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
-            <div class="drawer-body">
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="paginaInicial.html">Página Inicial</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="oquee.html">O que é?</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="tipos.html">Tipos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="curiosidades.html">Curiosidades</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="duvidas.html">Dúvidas</a>
-                  </li>
-                  <button class="nav-link" type="button" data-bs-toggle="menu" aria-expanded="false">
-                    Menu link
-                  </button>
-                <li class="nav-item">
-                  <div class="menu">
-                    <a class="menu-item" href="#">Action</a>
-                    <a class="menu-item" href="#">Another action</a>
-                    <a class="menu-item" href="#">Something else here</a>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </dialog>
         </div>
-      </nav>
-    <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
+    </nav>
+
+    <!-- Conteúdo -->
+    <main class="container my-5 flex-grow-1">
+        <div class="text-center mb-5">
+            <h1 class="fw-bold">Curiosidades sobre o Sudoku</h1>
+            <p class="lead text-muted">Fatos históricos e números impressionantes por trás desse fenômeno mundial.</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h4 class="fw-bold text-primary">1. Sextilhões de combinações possíveis</h4>
+                        <p class="card-text mt-2">
+                            Em 2005, os matemáticos Bertram Felgenhauer e Frazer Jarvis calcularam que existem exatamente <strong>6.670.903.752.021.072.936.960</strong> (cerca de 6,67 sextilhões) de grades válidas completas de Sudoku 9×9. Mesmo se você resolvesse um jogo por segundo, levaria bilhões de anos para ver todos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h4 class="fw-bold text-primary">2. O número mágico: 17 pistas</h4>
+                        <p class="card-text mt-2">
+                            Em 2012, o matemático Gary McGuire provou por meio de supercomputadores que um Sudoku clássico precisa ter <strong>pelo menos 17 números preenchidos</strong> no início para garantir uma única solução possível. Com 16 pistas ou menos, sempre haverá mais de uma resposta válida.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h4 class="fw-bold text-primary">3. Não tem nada a ver com matemática</h4>
+                        <p class="card-text mt-2">
+                            Os números de 1 a 9 são usados apenas como símbolos fáceis de reconhecer. Você poderia jogar Sudoku perfeitamente substituindo os dígitos por <strong>9 letras, cores, frutas ou ícones</strong> diferentes sem alterar em nada a lógica do desafio.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h4 class="fw-bold text-primary">4. Campeonato Mundial de Sudoku</h4>
+                        <p class="card-text mt-2">
+                            Desde 2006 acontece anualmente o <strong>World Sudoku Championship (WSC)</strong>, reunindo os competidores mais rápidos do planeta. Os melhores jogadores conseguem resolver um tabuleiro clássico de nível fácil ou médio em menos de 1 minuto e meio.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="card border-0 shadow-sm bg-dark text-white">
+                    <div class="card-body p-4">
+                        <h4 class="fw-bold text-warning">5. A explosão global começou em um jornal britânico</h4>
+                        <p class="card-text mb-0 mt-2">
+                            Embora tenha nascido nos EUA e crescido no Japão nos anos 1980, o Sudoku só virou febre mundial em novembro de 2004, quando o juiz aposentado Wayne Gould criou um programa gerador de tabuleiros e convenceu o jornal britânico <em>The Times</em> a publicá-lo diariamente. Em poucos meses, jornais do mundo inteiro adotaram o passatempo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-dark text-white text-center py-3 mt-auto">
+        <div class="container">
+            <small>Portal Sudoku &copy; 2026 — Desenvolvido com Bootstrap 5.3</small>
+        </div>
+    </footer>
 </body>
+ <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
 </html>

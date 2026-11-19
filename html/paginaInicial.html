@@ -7,48 +7,203 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar lg:navbar-expand bg-1 fg-2">
-        <div class="container-fluid">
-          <button class="btn-icon navbar-toggler" type="button" data-bs-toggle="drawer" data-bs-target="#navbarNavMenu" aria-controls="navbarNavMenu" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon" aria-hidden="true"></span>
-          </button>
-          <dialog class="drawer drawer-end" tabindex="-1" id="navbarNavMenu" aria-labelledby="navbarNavMenuLabel">
-            <div class="drawer-header">
-              <h5 class="drawer-title" id="navbarNavMenuLabel">Menu</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="drawer" aria-label="Close"></button>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUDOKU</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .slide-banner {
+            min-height: 360px;
+            display: flex;
+            align-items: center;
+        }
+        .slide-classico { background: linear-gradient(135deg, #0d6efd, #084298); }
+        .slide-mini     { background: linear-gradient(135deg, #198754, #0f5132); }
+        .slide-diagonal { background: linear-gradient(135deg, #6610f2, #3d0a91); }
+        .slide-killer   { background: linear-gradient(135deg, #dc3545, #842029); }
+        .slide-samurai  { background: linear-gradient(135deg, #212529, #495057); }
+    </style>
+</head>
+<body class="bg-light d-flex flex-column min-vh-100">
+
+    <!-- Navbar Oficial Bootstrap 5.3 -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom shadow-sm" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="paginaInicial.html">SUDOKU</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Alternar navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="paginaInicial.html">Página Inicial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="oquee.html">O que é?</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Explorar
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="tipos.html">Tipos</a></li>
+                            <li><a class="dropdown-item" href="curiosidades.html">Curiosidades</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="duvidas.html">Dúvidas</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
-            <div class="drawer-body">
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="paginaInicial.html">Página Inicial</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="oquee.html">O que é?</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="tipos.html">Tipos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="curiosidades.html">Curiosidades</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="duvidas.html">Dúvidas</a>
-                  </li>
-                  <button class="nav-link" type="button" data-bs-toggle="menu" aria-expanded="false">
-                    Menu link
-                  </button>
-                <li class="nav-item">
-                  <div class="menu">
-                    <a class="menu-item" href="#">Action</a>
-                    <a class="menu-item" href="#">Another action</a>
-                    <a class="menu-item" href="#">Something else here</a>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </dialog>
         </div>
-      </nav>
-    <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
+    </nav>
+
+    <!-- Carrossel com os Tipos de Sudoku -->
+    <div id="carouselTiposSudoku" class="carousel slide shadow" data-bs-ride="carousel">
+        <!-- Indicadores inferiores -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselTiposSudoku" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Sudoku Clássico"></button>
+            <button type="button" data-bs-target="#carouselTiposSudoku" data-bs-slide-to="1" aria-label="Mini Sudoku"></button>
+            <button type="button" data-bs-target="#carouselTiposSudoku" data-bs-slide-to="2" aria-label="Sudoku Diagonal"></button>
+            <button type="button" data-bs-target="#carouselTiposSudoku" data-bs-slide-to="3" aria-label="Killer Sudoku"></button>
+            <button type="button" data-bs-target="#carouselTiposSudoku" data-bs-slide-to="4" aria-label="Samurai Sudoku"></button>
+        </div>
+
+        <!-- Slides -->
+        <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+                <div class="slide-banner slide-classico text-white py-5">
+                    <div class="container px-5">
+                        <span class="badge bg-warning text-dark mb-2">Modalidade 1 de 5</span>
+                        <h2 class="display-5 fw-bold">Sudoku Clássico (9×9)</h2>
+                        <p class="lead col-lg-8">
+                            O formato tradicional com 9 linhas, 9 colunas e 9 blocos de 3×3. Preencha todas as casas de 1 a 9 usando apenas raciocínio lógico.
+                        </p>
+                        <a href="tipos.html" class="btn btn-light fw-semibold">Ver detalhes dos tipos</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <div class="slide-banner slide-mini text-white py-5">
+                    <div class="container px-5">
+                        <span class="badge bg-light text-dark mb-2">Modalidade 2 de 5 • Iniciantes</span>
+                        <h2 class="display-5 fw-bold">Mini Sudoku (4×4 e 6×6)</h2>
+                        <p class="lead col-lg-8">
+                            Grades menores e partidas rápidas para quem está começando a treinar eliminação de candidatos e lógica básica.
+                        </p>
+                        <a href="tipos.html" class="btn btn-light fw-semibold">Ver detalhes dos tipos</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+                <div class="slide-banner slide-diagonal text-white py-5">
+                    <div class="container px-5">
+                        <span class="badge bg-warning text-dark mb-2">Modalidade 3 de 5 • Intermediário</span>
+                        <h2 class="display-5 fw-bold">Sudoku Diagonal (Sudoku X)</h2>
+                        <p class="lead col-lg-8">
+                            Além das regras normais, as duas diagonais principais em formato de "X" também não podem ter números repetidos.
+                        </p>
+                        <a href="tipos.html" class="btn btn-light fw-semibold">Ver detalhes dos tipos</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="carousel-item">
+                <div class="slide-banner slide-killer text-white py-5">
+                    <div class="container px-5">
+                        <span class="badge bg-warning text-dark mb-2">Modalidade 4 de 5 • Com Soma</span>
+                        <h2 class="display-5 fw-bold">Killer Sudoku</h2>
+                        <p class="lead col-lg-8">
+                            Une lógica e aritmética: o tabuleiro possui áreas pontilhadas onde os dígitos precisam atingir exatamente a soma indicada.
+                        </p>
+                        <a href="tipos.html" class="btn btn-light fw-semibold">Ver detalhes dos tipos</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="carousel-item">
+                <div class="slide-banner slide-samurai text-white py-5">
+                    <div class="container px-5">
+                        <span class="badge bg-danger mb-2">Modalidade 5 de 5 • Avançado</span>
+                        <h2 class="display-5 fw-bold">Samurai Sudoku</h2>
+                        <p class="lead col-lg-8">
+                            Cinco grades 9×9 sobrepostas pelos cantos. A solução de um tabuleiro depende diretamente dos blocos compartilhados com os vizinhos.
+                        </p>
+                        <a href="tipos.html" class="btn btn-light fw-semibold">Ver detalhes dos tipos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botões Anterior / Próximo -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselTiposSudoku" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselTiposSudoku" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Próximo</span>
+        </button>
+    </div>
+
+    <!-- Cards das Páginas -->
+    <main class="container my-5 flex-grow-1">
+        <h3 class="text-center fw-bold mb-4">Navegue pelo Portal</h3>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">O que é?</h5>
+                        <p class="card-text text-muted flex-grow-1">Conheça a história do jogo e as 3 regras fundamentais para preencher qualquer grade.</p>
+                        <a href="oquee.html" class="btn btn-primary mt-2">Abrir página</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">Tipos</h5>
+                        <p class="card-text text-muted flex-grow-1">Veja a comparação completa entre Clássico, Mini, Diagonal, Killer e Samurai.</p>
+                        <a href="tipos.html" class="btn btn-primary mt-2">Abrir página</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">Curiosidades</h5>
+                        <p class="card-text text-muted flex-grow-1">Descubra quantos tabuleiros existem e qual o mínimo de pistas para uma solução única.</p>
+                        <a href="curiosidades.html" class="btn btn-primary mt-2">Abrir página</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold">Dúvidas</h5>
+                        <p class="card-text text-muted flex-grow-1">Tire suas dúvidas sobre técnicas de resolução e envie novas perguntas.</p>
+                        <a href="duvidas.html" class="btn btn-primary mt-2">Abrir página</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-dark text-white text-center py-3 mt-auto">
+        <div class="container">
+            <small>Portal Sudoku &copy; 2026 — Desenvolvido com Bootstrap 5.3</small>
+        </div>
+    </footer>
 </body>
+ <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
 </html>

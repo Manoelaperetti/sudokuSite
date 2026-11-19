@@ -4,51 +4,105 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O que é?</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!-- Alternativa via CDN:
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    -->
 </head>
-<body>
-    <nav class="navbar bg-body-tertiary fixed-top">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Offcanvas navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li>
-                      <hr class="dropdown-divider">
+<body class="bg-light d-flex flex-column min-vh-100">
+
+    <!-- Navbar Oficial Bootstrap 5.3 -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom shadow-sm" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="paginaInicial.html">SUDOKU</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Alternar navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="paginaInicial.html">Página Inicial</a>
                     </li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                  </ul>
-                </li>
-              </ul>
-              <form class="d-flex mt-3" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                <button class="btn btn-outline-success" type="submit">Search</button>
-              </form>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="oquee.html">O que é?</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Explorar
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="tipos.html">Tipos</a></li>
+                            <li><a class="dropdown-item" href="curiosidades.html">Curiosidades</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="duvidas.html">Dúvidas</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
-          </div>
         </div>
       </nav>
-    <!-- <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <!-- Conteúdo -->
+    <main class="container my-5 flex-grow-1">
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <h1 class="fw-bold mb-3">O que é Sudoku?</h1>
+                <p class="lead text-muted">
+                    O <strong>Sudoku</strong> é um quebra-cabeça de lógica combinatória baseado na distribuição de números. Apesar de usar algarismos de 1 a 9, o jogo não exige cálculos matemáticos — apenas raciocínio dedutivo, atenção e paciência.
+                </p>
+
+                <div class="card border-0 shadow-sm my-4">
+                    <div class="card-body p-4">
+                        <h4 class="fw-bold mb-3">Origem e Significado</h4>
+                        <p class="mb-0">
+                            O conceito moderno foi criado em 1979 pelo arquiteto norte-americano <strong>Howard Garns</strong> sob o nome <em>Number Place</em>. Em 1984, a editora japonesa <strong>Nikoli</strong> popularizou o jogo no Japão com o título <em>Sūji wa dokushin ni kagiru</em> ("os números devem permanecer únicos"), abreviado para <strong>Sudoku</strong> (<em>Su</em> = número, <em>Doku</em> = único).
+                        </p>
+                    </div>
+                </div>
+                <h3 class="fw-bold mt-5 mb-3">As 3 Regras de Ouro</h3>
+                <p>No tabuleiro clássico de <strong>9×9</strong> (81 casas divididas em 9 blocos de 3×3), você deve preencher os espaços vazios respeitando três condições simultâneas:</p>
+
+                <div class="row g-3 my-2">
+                    <div class="col-md-4">
+                        <div class="card h-100 border-primary">
+                            <div class="card-body">
+                                <span class="badge bg-primary mb-2">Regra 1</span>
+                                <h5 class="card-title fw-bold">Linhas Horizontais</h5>
+                                <p class="card-text">Cada uma das 9 linhas deve conter os números de <strong>1 a 9</strong> sem nenhuma repetição.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 border-primary">
+                            <div class="card-body">
+                                <span class="badge bg-primary mb-2">Regra 2</span>
+                                <h5 class="card-title fw-bold">Colunas Verticais</h5>
+                                <p class="card-text">Cada uma das 9 colunas deve conter os números de <strong>1 a 9</strong> sem nenhuma repetição.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 border-primary">
+                            <div class="card-body">
+                                <span class="badge bg-primary mb-2">Regra 3</span>
+                                <h5 class="card-title fw-bold">Blocos 3×3</h5>
+                                <p class="card-text">Cada uma das 9 regiões menores (3×3) também deve conter todos os números de <strong>1 a 9</strong>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="alert alert-info mt-4" role="alert">
+                    <strong>Dica para iniciantes:</strong> Comece procurando os números que já aparecem com mais frequência no tabuleiro. Cruze linhas e colunas dentro de um mesmo bloco 3×3 para encontrar casas onde apenas um número é possível.
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Rodapé -->
+    <footer class="bg-dark text-white text-center py-3 mt-auto">
+        <div class="container">
+            <small>Portal Sudoku &copy; 2026 — Desenvolvido com Bootstrap 5.3</small>
+        </div>
+    </footer>
 </body>
+<script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
 </html>
